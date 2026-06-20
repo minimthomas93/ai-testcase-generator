@@ -26,7 +26,7 @@ scenarios that manual testers often miss.
 
 | | Manual Testing | This Tool |
 |---|---|---|
-| Time to write test cases | 3-5 hours | Under 30 seconds |
+| Time to write test cases | 3-5 hours | Under 60 seconds |
 | Test cases generated | 20-30 typically | 50+ comprehensive |
 | Security cases covered | Often missed | Automatically included |
 | Boundary cases covered | Often missed | Automatically included |
