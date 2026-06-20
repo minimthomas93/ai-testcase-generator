@@ -39,17 +39,18 @@ python generate_testcases.py requirements/requirements_login.txt
 
 ## Screenshots
 
-### Input — Requirements Document
+### Input - Requirements Document
 ![Requirements](screenshots/requirement.png)
 
 ### Tool Running
 ![Terminal](screenshots/terminal_output.png)
 
-### Output — Generated Test Cases
+### Output - Generated Test Cases
 ![Excel Output](screenshots/excel_output.png)
 
 ## Project Structure
 
+```
 TestCaseGenerator/
 ├── requirements/           (requirements to be considered by the AI agent)
 ├── outputs/                (output testcases in excel file)
@@ -62,6 +63,7 @@ TestCaseGenerator/
 ├── generate_testcases.py   (main script - reads requirements and generates test cases)
 ├── requirements.txt        (Python packages to install)
 └── README.md               (Details about this tool)
+```
 
 ## Technologies
 Python · Gemini API · OpenPyXL · python-dotenv · prompt engineering
