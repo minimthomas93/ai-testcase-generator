@@ -1,0 +1,10 @@
+# API keys - NEVER upload these
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Output files (optional - remove if you want outputs in GitHub)
+outputs/

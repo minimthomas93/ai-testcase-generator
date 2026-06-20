@@ -1,0 +1,90 @@
+================================================================================
+PROJECT: SecureBank Web Application
+DOCUMENT: Business Requirements Document (BRD)
+FEATURE: User Login / Authentication
+VERSION: 1.0
+DATE: 2026-06-20
+AUTHOR: QA Team
+================================================================================
+
+1. OVERVIEW
+-----------
+The SecureBank web application requires a secure and user-friendly login system
+that allows registered users to authenticate and access their personal banking
+dashboard. The login feature must balance security with usability.
+
+
+2. FUNCTIONAL REQUIREMENTS
+--------------------------
+
+2.1 Login Form
+- The login page shall display a Username field (text input)
+- The login page shall display a Password field (masked input)
+- The login page shall display a "Login" submit button
+- The login page shall display a "Forgot Password?" link
+- The login page shall display a "Remember Me" checkbox
+
+2.2 Authentication Rules
+- Username must be a valid registered email address
+- Password must be between 8 and 32 characters
+- Password is case-sensitive
+- Both fields are mandatory; login shall not proceed if either is empty
+- Successful login redirects the user to the Account Dashboard
+
+2.3 Failed Login Handling
+- If credentials are incorrect, display error: "Invalid username or password."
+- Do NOT specify which field is incorrect (security requirement)
+- After 3 consecutive failed attempts, lock the account for 15 minutes
+- Display message: "Your account is temporarily locked. Please try again after 15 minutes."
+- After lockout expires, the attempt counter resets automatically
+
+2.4 Remember Me
+- If "Remember Me" is checked, the session persists for 30 days
+- If unchecked, the session expires when the browser is closed
+
+2.5 Forgot Password
+- Clicking "Forgot Password?" navigates to the password reset page
+- User enters their registered email address
+- System sends a password reset link valid for 60 minutes
+- If email is not registered, display: "If this email exists, a reset link has been sent."
+
+2.6 Session Management
+- Authenticated sessions expire after 30 minutes of inactivity
+- Users are redirected to the login page upon session expiry
+- Logging out clears the session and redirects to the login page
+
+2.7 Security Requirements
+- Passwords must never be stored or transmitted in plain text
+- Login page must be served over HTTPS only
+- The system must be protected against brute force attacks (handled by lockout policy)
+- SQL Injection and XSS attacks must be mitigated
+
+
+3. NON-FUNCTIONAL REQUIREMENTS
+-------------------------------
+- Login response time must be under 3 seconds on standard broadband
+- The login page must be responsive and usable on desktop, tablet, and mobile
+- The login page must comply with WCAG 2.1 accessibility standards
+- The system must support a minimum of 10,000 concurrent login attempts
+
+
+4. OUT OF SCOPE
+---------------
+- Social login (Google, Facebook, etc.) — planned for v2.0
+- Two-Factor Authentication (2FA) — planned for v2.0
+- Biometric login — future consideration
+
+
+5. ACCEPTANCE CRITERIA
+-----------------------
+- A valid registered user can log in successfully with correct credentials
+- An unregistered or invalid user cannot log in
+- Account lockout triggers after exactly 3 failed attempts
+- Session expires correctly based on "Remember Me" selection
+- All error messages follow the defined wording exactly
+- Page loads and responds within 3 seconds
+- Login works correctly on Chrome, Firefox, Safari, and Edge
+
+================================================================================
+END OF DOCUMENT
+================================================================================
