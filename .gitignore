@@ -6,5 +6,3 @@ __pycache__/
 *.pyc
 *.pyo
 
-# Output files (optional - remove if you want outputs in GitHub)
-outputs/
